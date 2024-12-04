@@ -7,7 +7,7 @@ uci commit luci
 uci -q batch <<-EOF
 	set system.@system[0].timezone='CST-8'
 	set system.@system[0].zonename='Asia/Shanghai'
-	set system.@system[0].hostname='AlphaWRT'
+	set system.@system[0].hostname='PureWrt'
 
 	delete system.ntp.server
 	add_list system.ntp.server='ntp.ntsc.ac.cn'
@@ -32,13 +32,13 @@ echo "DISTRIB_REVISION='R$(TZ=UTC-8 date "+%-m.%-d")'" >> /etc/openwrt_release
 sed -i '/DISTRIB_RELEASE/d' /etc/openwrt_release
 echo "DISTRIB_RELEASE='$(TZ=UTC-8 date "+%Y.%-m.%-d")'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
-echo "DISTRIB_DESCRIPTION='AlphaWRT '" >> /etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='PureWrt '" >> /etc/openwrt_release
 
-sed -i 's/LuCI Master/AlphaWRT/g' /usr/lib/lua/luci/version.lua
-sed -i 's/LuCI openwrt-18.06 branch/AlphaWRT/g' /usr/lib/lua/luci/version.lua
-sed -i 's/LuCI openwrt-18.06-k5.4 branch/AlphaWRT/g' /usr/lib/lua/luci/version.lua
-sed -i 's/LuCI 17.01 Lienol/AlphaWRT/g' /usr/lib/lua/luci/version.lua
-sed -i 's/LuCI openwrt-21.02 branch/AlphaWRT/g' /usr/lib/lua/luci/version.lua
+sed -i 's/LuCI Master/PureWrt/g' /usr/lib/lua/luci/version.lua
+sed -i 's/LuCI openwrt-18.06 branch/PureWrt/g' /usr/lib/lua/luci/version.lua
+sed -i 's/LuCI openwrt-18.06-k5.4 branch/PureWrt/g' /usr/lib/lua/luci/version.lua
+sed -i 's/LuCI 17.01 Lienol/PureWrt/g' /usr/lib/lua/luci/version.lua
+sed -i 's/LuCI openwrt-21.02 branch/PureWrt/g' /usr/lib/lua/luci/version.lua
 sed -i '/luciversion/d' /usr/lib/lua/luci/version.lua
 echo "luciversion = '$(TZ=UTC-8 date "+%Y.%-m.%-d")'" >> /usr/lib/lua/luci/version.lua
 
